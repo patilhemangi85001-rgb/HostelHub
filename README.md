@@ -30,7 +30,7 @@ Install the required tools for your project, such as Node.js and npm, if applica
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/hemangi404/HostelHub.git
+   git clone https://github.com/patilhemangi85001-rgb/HostelHub.git
    ```
 
 2. Open the project folder:
