@@ -1,0 +1,556 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.hostel-navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    position: relative;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hostel-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #172554;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo-icon {
+    font-size: 28px;
+}
+
+.hostel-navigation {
+    display: flex !important;
+    align-items: center;
+    gap: 28px;
+}
+
+.hostel-navigation a {
+    text-decoration: none;
+    color: #475569;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.hostel-navigation a:hover {
+    color: #2563eb;
+}
+
+.login-button {
+    background: #2563eb !important;
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+}
+
+.login-button:hover {
+    background: #1d4ed8 !important;
+    color: white !important;
+}
+
+.menu-button {
+    display: none;
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #eff6ff, #ffffff);
+    padding: 70px 30px;
+}
+
+.hero-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1d4ed8;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    line-height: 1.1;
+    margin: 0 0 20px;
+    color: #172554;
+}
+
+.hero h1 span {
+    color: #2563eb;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #64748b;
+    max-width: 650px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 13px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-secondary {
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    background: white;
+}
+
+.hero-card {
+    background: white;
+    padding: 45px 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.1);
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+.hero-card h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #172554;
+}
+
+.hero-card p {
+    font-size: 15px;
+    margin: auto;
+}
+
+.mini-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.mini-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.mini-stats strong {
+    font-size: 24px;
+    color: #2563eb;
+}
+
+.mini-stats span {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    padding: 80px 30px;
+    background: #ffffff;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+}
+
+.section-heading span,
+.why-hostelhub span {
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.section-heading h2,
+.why-hostelhub h2 {
+    font-size: 38px;
+    color: #172554;
+    margin: 12px 0;
+}
+
+.section-heading p,
+.why-hostelhub p {
+    color: #64748b;
+    line-height: 1.7;
+}
+
+.service-grid {
+    max-width: 1200px;
+    margin: 50px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.service-card {
+    padding: 30px 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: white;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.service-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: #172554;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* =========================
+   WHY HOSTELHUB
+========================= */
+
+.why-hostelhub {
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.feature-list {
+    display: grid;
+    gap: 15px;
+}
+
+.feature-list div {
+    background: #eff6ff;
+    padding: 17px 20px;
+    border-radius: 10px;
+    color: #1e40af;
+    font-weight: 600;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.hostel-footer {
+    background: #172554;
+    color: white;
+    padding-top: 60px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px 45px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+}
+
+.footer-content h3 {
+    font-size: 25px;
+}
+
+.footer-content h4 {
+    margin-bottom: 18px;
+}
+
+.footer-content p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.footer-content a {
+    display: block;
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.footer-content a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #cbd5e1;
+}
+
+/* =========================
+   LOGIN / REGISTER
+========================= */
+
+.auth-page {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #eff6ff, #ffffff);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.1);
+}
+
+.auth-logo {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dbeafe;
+    border-radius: 50%;
+    font-size: 32px;
+    margin: 0 auto 20px;
+}
+
+.auth-card h1 {
+    text-align: center;
+    color: #172554;
+    margin-bottom: 10px;
+}
+
+.auth-subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.auth-submit {
+    width: 100%;
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 13px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.auth-submit:hover {
+    background: #1d4ed8;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #64748b;
+}
+
+.auth-footer a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.login-error {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-hostelhub {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .nav-container {
+        padding: 14px 20px;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .hostel-navigation {
+        display: none !important;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px 0;
+    }
+
+    .hostel-navigation.show {
+        display: flex !important;
+    }
+
+    .hostel-navigation.collapsing {
+        display: flex !important;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-hostelhub {
+        padding: 60px 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-card {
+        padding: 30px 20px;
+    }
+}

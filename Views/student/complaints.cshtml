@@ -1,0 +1,61 @@
+
+@model IEnumerable<Hostelhub.Models.Complaint>
+
+@{
+    ViewData["Title"] = "My Complaints";
+}
+
+<div class="container mt-4">
+    <h2>My Complaints</h2>
+    <p>Check the status of your submitted complaints.</p>
+
+    <a asp-controller="Student"
+       asp-action="SubmitComplaint"
+       class="btn btn-primary mb-3">
+        + Submit New Complaint
+    </a>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Success"]
+        </div>
+    }
+
+    @if (Model == null || !Model.Any())
+    {
+        <div class="alert alert-info">
+            You have not submitted any complaints yet.
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Room Number</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var complaint in Model)
+                    {
+                        <tr>
+                            <td>@complaint.RoomNumber</td>
+                            <td>@complaint.Category</td>
+                            <td>@complaint.Description</td>
+                            <td>@complaint.Status</td>
+                            <td>
+                                @complaint.CreatedAt.ToString("dd-MM-yyyy")
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

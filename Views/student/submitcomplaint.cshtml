@@ -1,0 +1,76 @@
+
+@model Hostelhub.Models.Complaint
+
+@{
+    ViewData["Title"] = "Submit Complaint";
+}
+
+<div class="container mt-4">
+    <h2>Submit a Complaint</h2>
+    <p>Tell us about any problem you are facing in the hostel.</p>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Success"]
+        </div>
+    }
+
+    <form asp-controller="Student"
+          asp-action="SubmitComplaint"
+          method="post">
+
+        <div asp-validation-summary="All"
+             class="text-danger"></div>
+
+        <div class="mb-3">
+            <label asp-for="RoomNumber" class="form-label">
+                Room Number
+            </label>
+            <input asp-for="RoomNumber"
+                   class="form-control"
+                   placeholder="Enter your room number" />
+            <span asp-validation-for="RoomNumber"
+                  class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Category" class="form-label">
+                Complaint Category
+            </label>
+            <select asp-for="Category" class="form-select">
+                <option value="">-- Select Category --</option>
+                <option value="Room Maintenance">Room Maintenance</option>
+                <option value="Electricity">Electricity</option>
+                <option value="Water Supply">Water Supply</option>
+                <option value="Cleanliness">Cleanliness</option>
+                <option value="Mess Food">Mess Food</option>
+                <option value="Other">Other</option>
+            </select>
+            <span asp-validation-for="Category"
+                  class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label">
+                Complaint Description
+            </label>
+            <textarea asp-for="Description"
+                      class="form-control"
+                      rows="5"
+                      placeholder="Describe your problem here"></textarea>
+            <span asp-validation-for="Description"
+                  class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Submit Complaint
+        </button>
+
+        <a asp-controller="Student"
+           asp-action="Complaints"
+           class="btn btn-secondary">
+            View My Complaints
+        </a>
+    </form>
+</div>

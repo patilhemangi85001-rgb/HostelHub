@@ -1,0 +1,135 @@
+
+@{
+    ViewData["Title"] = "Student Dashboard";
+}
+
+<div class="container py-5 student-dashboard">
+
+    <h2>Welcome, @ViewBag.UserName! 👋</h2>
+    <p class="text-muted">
+        Manage your hostel activities in one place.
+    </p>
+
+    <hr />
+
+    <!-- Dashboard Cards -->
+    <div class="row g-4 mt-3">
+
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 h-100">
+                <h5>My Room</h5>
+                <h3>@ViewBag.RoomNumber</h3>
+                <p>@ViewBag.RoomType</p>
+                <span class="badge bg-success">
+                    @ViewBag.RoomStatus
+                </span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 h-100">
+                <h5>Total Complaints</h5>
+                <h3>@ViewBag.TotalComplaints</h3>
+                <p>All your complaints</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 h-100">
+                <h5>Pending Complaints</h5>
+                <h3>@ViewBag.PendingComplaints</h3>
+                <p>Awaiting resolution</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 h-100">
+                <h5>Resolved Complaints</h5>
+                <h3>@ViewBag.ResolvedComplaints</h3>
+                <p>Completed complaints</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 h-100">
+                <h5>Mess Rating</h5>
+                <h3>@ViewBag.MessRating</h3>
+                <p>Hostel food feedback</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Latest Notice -->
+    <div class="mt-5">
+        <h4>Latest Hostel Notice</h4>
+        <div class="alert alert-info mt-3">
+            @ViewBag.LatestNotice
+        </div>
+    </div>
+
+    <hr class="my-5" />
+
+    <!-- Submit Complaint Form -->
+    <div class="card shadow-sm p-4 mt-4">
+        <h4>Submit a Complaint</h4>
+        <p class="text-muted">
+            Report any room, cleaning, water, electricity,
+            or mess-related problem.
+        </p>
+
+        <form asp-controller="Student"
+              asp-action="SubmitComplaint"
+              method="post">
+
+            @Html.AntiForgeryToken()
+
+            <div class="mb-3">
+                <label class="form-label">Room Number</label>
+                <input type="text"
+                       name="roomNumber"
+                       class="form-control"
+                       placeholder="Enter your room number"
+                       required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Complaint Category</label>
+                <select name="category"
+                        class="form-select"
+                        required>
+                    <option value="">Select category</option>
+                    <option value="Room">Room Problem</option>
+                    <option value="Cleaning">Cleaning</option>
+                    <option value="Water">Water Problem</option>
+                    <option value="Electricity">Electricity</option>
+                    <option value="Mess">Mess / Food</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">
+                    Describe Your Complaint
+                </label>
+                <textarea name="description"
+                          class="form-control"
+                          rows="4"
+                          placeholder="Write your complaint here..."
+                          required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Submit Complaint
+            </button>
+        </form>
+    </div>
+
+    <!-- Logout -->
+    <a asp-controller="Account"
+       asp-action="Logout"
+       class="btn btn-danger mt-4">
+        Logout
+    </a>
+
+</div>

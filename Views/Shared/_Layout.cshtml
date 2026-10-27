@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - HostelHub</title>
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
+
+    <link rel="stylesheet"
+          href="~/Hostelhub.styles.css"
+          asp-append-version="true" />
+
+    <style>
+        .auth-nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .register-button {
+            background: #172554;
+            color: white !important;
+            padding: 10px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-button:hover {
+            background: #1e3a8a;
+            color: white !important;
+        }
+
+        @@media (max-width: 700px) {
+
+            .auth-nav-buttons {
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .login-button,
+            .register-button {
+                width: 100%;
+                text-align: center;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="hostel-navbar">
+
+            <div class="nav-container">
+
+                <a class="hostel-logo"
+                   asp-controller="Home"
+                   asp-action="Index">
+
+                    <span class="logo-icon">🏠</span>
+                    <span>HostelHub</span>
+
+                </a>
+
+                <button class="menu-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainNavigation"
+                        aria-controls="mainNavigation"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+
+                    ☰
+
+                </button>
+
+                <div class="collapse hostel-navigation"
+                     id="mainNavigation">
+
+                    <a asp-controller="Home"
+                       asp-action="Index">
+                        Home
+                    </a>
+
+                    <a href="/#services">
+                        Services
+                    </a>
+
+                    <a href="#">
+                        About
+                    </a>
+
+                    <a href="#">
+                        Contact
+                    </a>
+
+                    <div class="auth-nav-buttons">
+
+                        <a class="login-button"
+                           asp-controller="Account"
+                           asp-action="Login">
+                            Login
+                        </a>
+
+                        <a class="register-button"
+                           asp-controller="Account"
+                           asp-action="Register">
+                            Register
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <main role="main">
+
+        @RenderBody()
+
+    </main>
+
+
+    <footer class="hostel-footer">
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>🏠 HostelHub</h3>
+
+                <p>
+                    Smart hostel management made simple,
+                    organized and digital.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h4>Quick Links</h4>
+
+                <a asp-controller="Home"
+                   asp-action="Index">
+                    Home
+                </a>
+
+                <a href="/#services">
+                    Services
+                </a>
+
+                <a href="#">
+                    About
+                </a>
+
+                <a href="#">
+                    Contact
+                </a>
+
+                <a asp-controller="Account"
+                   asp-action="Login">
+                    Login
+                </a>
+
+                <a asp-controller="Account"
+                   asp-action="Register">
+                    Register
+                </a>
+
+            </div>
+
+            <div>
+
+                <h4>HostelHub</h4>
+
+                <p>🛠 Complaints</p>
+                <p>📢 Notices</p>
+                <p>🏠 Rooms</p>
+                <p>🍱 Mess Feedback</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 HostelHub. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js"
+            asp-append-version="true">
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
